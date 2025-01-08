@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+  var spanText = function spanText(text) {
+  var string = text.innerText;
+  var spaned = '';
+  for (var i = 0; i < string.length; i++) {
+    if(string.substring(i, i + 1) === ' ') spaned += string.substring(i, i + 1);
+    else spaned += '<span>' + string.substring(i, i + 1) + '</span>';
+  }
+  text.innerHTML = spaned;
+}
+
+var headline = document.querySelector("h1");
+
+spanText(headline);
+
+let animations = document.querySelectorAll('.animation');
+
+animations.forEach(animation => {
+  let letters = animation.querySelectorAll('span');
+  letters.forEach((letter, i) => {
+    letter.style.animationDelay = (i * 0.1) + 's';
+  })
+})
+
+  function toggle(id){
+    var e = document.getElementById(id);
+     
+    if (e.style.display == "none"){
+       e.style.display = "";
+    } else {
+       e.style.display = "none";
+    }
+  }
+  function show_moti(id) {
+    document.getElementById("moti").style.display = 'block'
+    document.getElementById("portfolio1").style.display = 'none'
+    document.getElementById("portfolio2").style.display = 'none'
+    document.getElementById("cv1").style.display = 'none'
+    document.getElementById("cv2").style.display = 'none'
+  }
+  function show_cv(id) {
+    document.getElementById("cv1").style.display = 'block'
+    document.getElementById("cv2").style.display = 'block'
+    document.getElementById("portfolio1").style.display = 'none'
+    document.getElementById("portfolio2").style.display = 'none'
+    document.getElementById("moti").style.display = 'none'
+
+
+
+  }
+  function show_portfolio(id) {
+    document.getElementById("portfolio1").style.display = 'block'
+    document.getElementById("portfolio2").style.display = 'block'
+    document.getElementById("cv1").style.display = 'none'
+    document.getElementById("cv2").style.display = 'none'
+    document.getElementById("moti").style.display = 'none'
+
+  }
+</script>
+<style>
+    p {
+      border: 20px; 
+      margin: 10px ; 
+      font-weight: 100px; 
+      font-family:"tobiasregular";
+      /* text-align: justify; */
+    }
+    .details{
+        font-size: 14px;
+    }
+    h1{
+      font-size: larger; 
+      font-weight: bold; 
+      text-decoration: underline; 
+      margin-top: 15px; 
+      margin-bottom: 10px;
+      margin-left: -50px;
+    }
+    h2{
+      font-size: large; margin-bottom: 3px; text-shadow: 2px 2px yellow;
+    }
+    h5{
+      margin-bottom: 5px; margin-top: 5px ; font-family:"denimregular"; font-size: large; text-decoration: underline;
+    }
+    
+    div {
+      margin: 5px;
+    }
+    img{
+      margin: 10px;
+    }
+    .imagess{
+      max-height: 80vh;
+      height: 100%;
+      width: 100%;
+      /* object-fit: fill; */
+    }
+    .image_writing{
+      max-height: 200px;
+    }
+
+    .image_ud{
+      max-width: 100%;
+    }
+    .section_heading{
+      text-align: center;
+      /* margin-top: 5%; */
+      /* margin-bottom: 50px; */
+      margin-left: -60px;
+      /* margin-right: auto; */
+      padding-top: 150px;
+    }
+    .section_heading_a{
+      text-align: center;
+      /* margin-top: 5%; */
+      /* margin-bottom: 50px; */
+      margin-left: -60px;
+      /* margin-right: auto; */
+      padding-top: 50px;
+    }
+    .non-writing-descriptor{
+      background-color: rgba(0, 0, 255, 0.078);
+    }
+    
+    .subtable{
+        border: none;
+        margin: 5px;
+        margin-left: 100px;
+        /* margin-right: auto; */         
+    }
+    .header{
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px black;
+        align-items: end;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+    }
+    .title{
+        /* margin: 5px; */
+        /* margin-left: -50px; */
+        /* border: 3px solid rgb(0, 255, 0); */
+        max-width: 1200px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .h1{
+        margin-top: 0px;
+        /* border-bottom: 3px dashed rgb(252, 1, 240); */
+        margin-left: -70px;
+        display: block;
+    }
+    .entry{
+        position: static;
+        padding-top: 100px;
+    }
+    .position{
+        color: rgb(252, 1, 240);
+    }
+    .institution{
+        text-shadow: 2px;
+        font-weight: 600;
+    }
+    .date{
+        text
+    }
+    .quote{
+        margin-left: 50px;
+        display: block;
+        font-size: 12px
+    }
+    h1 span {
+  display: inline-block;
+  animation: slideLeft 1.5s forwards;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  table {
+  /* border:2px solid rgb(252, 1, 240); */
+  width: 100%;
+  max-width: 1000px;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+    }
+    td, th {
+        /* border: 1px dotted rgb(39, 1, 252);  */
+        vertical-align: top;
+        max-width: 1000px;
+    }
+    tr {
+    }
+    button {
+    margin: 7px;
+    color: blueviolet;
+    }
+    .aligncenter{
+    text-align: center;
+  }
+    /* hr{ */
+        width: 100%;
+        color: rgb(255, 0, 255);
+        border-style: dashed;
+        size: 1px;
+    }
+    .cv{
+        border-left: 3px solid rgb(93, 252, 1);
+    }
+    .container_a{
+        display: flex;
+        /* flex-direction: row; */
+        /* align-items: flex-end; */
+    }
+    .container_b{
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        position: fixed;
+        width: max-content;
+        margin-left: 2px;
+    }
+    .link {
+      text-decoration: underline;
+      color: blue;
+    }
+    .entries {
+      margin-top: 20px;
+      border: 1px solid rgb(252, 1, 240);
+      padding: 10px;
+    }
+    .moti {
+      /* margin-top: 200px; */
+    }
+    .c1 {
+      color:#000000;
+      font-weight:400;
+      text-decoration:none;
+      vertical-align:baseline;
+      font-size:11pt;
+      font-family:"Arial";
+      font-style:normal}
+    .c0 {
+      padding-top:0pt;
+      padding-bottom:0pt;
+      line-height:1.15;
+      orphans:2;
+      widows:2;
+      text-align:left}
+    .c2 {
+      height:11pt
+    }
+    .c3{
+      background-color:#ffffff;
+      max-width:451.4pt;
+      padding:72pt 72pt 72pt 72pt}
+      .hyperlink {
+            /* cursor: help; */
+            color: blue;
+            /* text-decoration: underline; */
+            /* color: blue; */
+            text-decoration: underline dotted;
+            text-decoration-color: blue;
+            text-underline-offset: 4px;
+        }
+        .hyperlink:hover .position, 
+        .hyperlink:hover {
+            color: rgb(252, 1, 240);
+            text-decoration-color: rgb(252, 1, 240);
+        }
+
+  @keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  }
+  @font-face {
+    font-family: 'tobiasregular';
+    src: url('https://christianhoerner.xyz/data.head.168258415113') format('woff2'),
+         url('https://christianhoerner.xyz/data.head.168258415112') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    }
+    @font-face {
+        font-family: 'tobiasbold';
+        src: url('https://endboss-hire-chris.hotglue.me/data.head.167361035392') format('woff2'),
+            url('https://endboss-hire-chris.hotglue.me/data.head.167361035391') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+    @font-face {
+        font-family: 'denimbold';
+        src: url('https://endboss-hire-chris.hotglue.me/data.head.167371999521') format('woff2'),
+            url('https://endboss-hire-chris.hotglue.me/data.head.167371999520') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+    @font-face {
+        font-family: 'denimregular';
+        src: url('https://christianhoerner.xyz/data.head.168258432613') format('woff2'),
+            url('https://christianhoerner.xyz/data.head.168258432612') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+</style>
+</head>
+<body>
+    <header>
+      <div style="display: flex; flex-direction: column; align-items: end;">
+        <div style="align-self: flex-start; position: fixed;">
+        <p style="margin-left: -5px;">
+          <span style="color: rgb(252, 1, 240);">
+            PORTFOLIO&nbsp;
+          </span>
+          &#8621;&nbsp;
+        <span class="hyperlink">
+            <a href="https://christianhoerner.xyz/cv" /*onclick="window.open(this.getAttribute('data-href')); return false;"*/>CV</a>
+        </span>
+      </p>
+        </div>
+        <div style="padding-top: 5px; position: fixed;">
+                <p style="text-align: right; line-height: 1.5;">
+                    Christian Hörner 
+                <br>
+                    christian.hoerner@posteo.de
+                <br>
+                </p>
+        </div>
+    </div>
+</header>
+<div style="display: flex; flex-direction: row; align-items: center;" id="portfolio1">
+    <header style="margin-left: auto; margin-right: auto; margin-top: 70px;">
+          <p class="title">
+                <pre>
+         _          _            _         _            _          _            _              _          _       
+        /\ \       /\ \         /\ \      /\ \         /\ \       /\ \         _\ \           /\ \       /\ \     
+       /  \ \     /  \ \       /  \ \     \_\ \       /  \ \     /  \ \       /\__ \          \ \ \     /  \ \    
+      / /\ \ \   / /\ \ \     / /\ \ \    /\__ \     / /\ \ \   / /\ \ \     / /_ \_\         /\ \_\   / /\ \ \   
+     / / /\ \_\ / / /\ \ \   / / /\ \_\  / /_ \ \   / / /\ \_\ / / /\ \ \   / / /\/_/        / /\/_/  / / /\ \ \  
+    / / /_/ / // / /  \ \_\ / / /_/ / / / / /\ \ \ / /_/_ \/_// / /  \ \_\ / / /            / / /    / / /  \ \_\ 
+   / / /__\/ // / /   / / // / /__\/ / / / /  \/_// /____/\  / / /   / / // / /            / / /    / / /   / / / 
+  / / /_____// / /   / / // / /_____/ / / /      / /\____\/ / / /   / / // / / ____       / / /    / / /   / / /  
+ / / /      / / /___/ / // / /\ \ \  / / /      / / /      / / /___/ / // /_/_/ ___/\ ___/ / /__  / / /___/ / /   
+/ / /      / / /____\/ // / /  \ \ \/_/ /      / / /      / / /____\/ //_______/\__\//\__\/_/___\/ / /____\/ /    
+\/_/       \/_________/ \/_/    \_\/\_\/       \/_/       \/_________/ \_______\/    \/_________/\/_________/     
+                                                                                                                  
+</pre>
+            </p>
+            </td>
+        </tr>
+    </table>
+</header>
+</div>
+<div id="portfolio2">
+    <section class="container_a">
+        <nav>
+            <ul class="link">
+                <li><a href="#writing">&#8594;Writing</a></li>
+                <li><a href="#installations">&#8594;Installations</a></li>
+                <li><a href="#design">&#8594;Urban Design</a></li>
+                <li><a href="#video">&#8594;Video</a></li>
+                <li><a href="#curatorial">&#8594;Curatorial Work</a></li>
+              </ul>
+        </nav>
+        <article style="margin-left: 300px; max-width: min-content;">
+        <div> 
+    <div id="writing" class="section_heading_a" /*style="margin-left: -80px; padding-top: 50px;"*/>
+                  <pre>
+░█░█░█▀▄░▀█▀░▀█▀░▀█▀░█▀█░█▀▀
+░█▄█░█▀▄░░█░░░█░░░█░░█░█░█░█
+░▀░▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀</pre>
+                </div></a>
+  <!-- <div id="f10" style="display: none;"> -->
+    <div id="dorc" class="entry">
+      <div class="entries">
+          <h5 style="text-decoration: underline;">+[Masters Thesis, 2024] Waste and Data - Researching the Governmentality of Smart Waste Prototypes in Hanover,</h5>
+              <table>
+                  <tr>
+                    <td> 
+                      <p>The “Smart City” is a trend in contemporary urbanism that represents new computational rationalities of governing and managing infrastructures. These logics inform experimental processes of embedding digital devices into existing systems and urban lifeworlds. In Hanover, Germany, a joint-venture of public and private firms is currently prototyping a “Smart Waste” system that utilizes sensing and communication technology in order to optimize the city’s waste management. Applying recent theoretical literature on environmental governmentality to the case of Hanover, the thesis seeks to empirically expand critical studies of the Smart City. Highlighting how smart governmentality is enacted by the project, the case material suggests that waste is rearticulated from unwanted material to valuable data resource. Following a methodology that thinks infrastructures as complex systems of human and non-human actors, a mixed-method approach was utilized that employed discursive document analysis, historical research, interviews, and qualitative analysis. This research highlights power dynamics between populations and infrastructures in smart cities and underscores the transformation of urban epistemologies through smart city prototypes. The work offers a perspective that, rather than placing the human in the center of attention, asks questions about how digital technologies change our understandings of urban materials and how this shift affects urban lifeworlds.</p>
+                        <button data-href="https://christianhoerner.xyz/data.head.171801166520"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
+                      </td>
+                      <td>
+                          <img class="image_writing" src="https://christianhoerner.xyz/data.head.171801464839" alt="Protocol-13-Cover">
+                      </td>
+                  </tr>
+              </table>
+    </div>
+    </div>
+                  <div id="dorc" class="entry">
+                  <div class="entries">
+                      <h5 style="text-decoration: underline;">+[Short Story, 2023] Dreams of Radical Connectedness</h5>
+                          <table>
+                              <tr>
+                                <td> 
+                                  <p>What are possible means for us as urbanites, students or urbanists to question and eventually challenge the smart governmentality of digitalizing cities? How can we produce a kind of collective resilience of reflection and critical attention? This project is an outcome of the "Urban No-Thing" studio course at the Estonian Academy of Arts in Winter 22/23. As a short story, it engages in multiple critical trajectories simultaneously and speculatively. It features a fictional scenario around the idea of cybernetically controlled urban "smartness". The idea is to create an immersive and imaginary space to test the implications of increasing digitalization in an urban setting. The story can be seen as a vehicle for critique that emerges from a space between imagination and theory, wherein the acts of reading and writing stories are inherently political.</p>
+                                    <button data-href="https://christianhoerner.xyz/data.head.168258664669"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
+                                  </td>
+                                  <td>
+                                      <img class="image_writing" src="https://endboss-hire-chris.hotglue.me/data.head.167804170625" alt="Protocol-13-Cover">
+                                  </td>
+                              </tr>
+                          </table>
+                </div>
+                </div>
+                  <div id="protocol" class="entry">
+                  <div class="entries">
+                      <h5 style="text-decoration: underline;">+[Essay, 2023] Of Neighbours and Friends</h5>
+                          <table>
+                              <tr>
+                                  <td>
+                                      <img class="image_writing" src="https://i.postimg.cc/J8qh1tvS/Protocol-13-Cover.png" alt="Protocol-13-Cover">
+                                  </td>
+                                  <td> 
+                                      <p>Diving deep into the idea of blockchain as a tool to create social infrastructure, the publication in protocol magazine 
+                                      presents a discussion of potentials and critical reflection of the technopolitics of the DAO, a recent phenomenon in the 
+                                      blockchain space. It spells out as "Decentralized Autonomous Organization" and applies to organizational modes that rely 
+                                      on cryptographic technology. The text presents the context of Tallinn's modernist district 
+                                      Laagna and speculates on modes of applying recent "DAO-ist" ideas in order to facilitate local governance. Co-authored by Paula Veidenbauma, 
+                                      it is a counterpart to our proposal for the Tallinn Architecture Bienalle 2022 Vision Competition, providing a more in-depth 
+                                      exploration of various themes surrounding the idea of fostering exchange and incentivizing collaboration through local & 
+                                      decentralized currencies, digital voting and circular economy.</p>
+                                      <button data-href="https://christianhoerner.xyz/data.head.168258651944"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
+                                  </td>
+                              </tr>
+                          </table>
+                </div>
+                </div>
+                <div id="sirp" class="entry">
+                <div class="entries">
+                <h5 style="text-decoration: underline;">+[Article, 2022] Food Cities: Or, The Common Knowledge of Metabolism</a></h5>
+                <table>
+                  <tr>
+                    <td>
+                      <p>
+                        Published in September of 2022 in the Estonian cultural journal Sirp, the article presents a review of the most 
+                        recent installment of the Tallinn Architecture Biennale. Under the title "Edible, Or: Architectures of Metabolism" 
+                      the festival centered around the topics of urban natures, agriculture and sustainable cities. In the review, I
+                       critically highlight the epistemological dimension of the presented projects in relation to agriculture, 
+                       sustainability and food: Significant variations, in my opinion, can be detected in how projects related to 
+                       the production of common knowledge about nourishment, subsistence and thus sustainment of life. Especially 
+                       highly technical projects, I argue, run the risk of exceedingly centralizing knowledge and abilities, thus 
+                       promoting a highly technocratic urban sustainability. This takes away agency from laypeople, which, as I argue, is 
+                       key in producing a deeply sustainable and just city.
+                      </p>
+                      <button data-href="https://christianhoerner.xyz/data.head.168258643484"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
+                    </td>
+                    <td>
+                      <img class="image_writing" src="https://sirp.ee/wp-content/uploads/2022/10/sirp_43_22_0032__art_r1.jpeg" alt="Vertical Farming Robot">
+                      
+                    </td>
+                  </tr>
+                </table>    
+                </div>
+                </div>
+                <div id="transport" class="entry">
+                <div  class="entries">
+                      <h5 style="text-decoration: underline;">+[Essay, 2022] Optimal Transport, Controlled Citizens? - Towards an Understanding of the Cybernetic Technopolitics of Intelligent Transportation Systems</a></h5>
+                      <table>
+                        <tr>
+                          <td>
+                            <img class="image_writing" src="https://i.postimg.cc/JzBT83pk/Screenshot-2023-02-04-at-15-35-14-Optimal-Transport-Controlled-Citizens.png" alt="Protocol-13-Cover">
+                          </td>
+                          <td>
+                            <p>This essay makes an attempt to understand “Intelligent Transportation Systems” (ITS) through the theoretical insights derived from the study of cybernetic systems. It features different examples of ITS from the Tallinn context to illustrate its theoretical claims. Concludingly, it circles back to the so-called “Cybernetic Hypothesis” to emphasize how critically reflecting on cybernetic logic is to help us reach a just, sustainable and digital urban future.
+                            </p>
+                            <button data-href="https://christianhoerner.xyz/data.head.168258643484"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
+  
+                          </td>
+                        </tr>
+                      </table>
+                </div>
+                </div>
+                <div id="ba" class="entry">
+                <div class="entries">
+                        <h5>+[BA Thesis, 2020] Common Good as a Form of Life in Beta: An Ethnography of Prototypical Infrastructures of Commons-Oriented Urban Development</a></h5>
+                        <table>
+                          <tr>
+                            <td> 
+                              <p>The thesis deals with the case study of the “Projekt Commons” (PC) as a new form of civic participation as well as 
+                                cooperation between an organized public and state institutions. "Common Good" is the central concept of the research 
+                                because it represents a crucial concept for the project PC in framing its own actions. Beyond that, according to the 
+                                thesis of the paper, it can be understood as a formative criterion of the infrastructures that shape everyday life of 
+                                the project. Following up on this, the thesis proposes a reconceptualization of the term for qualitative social science 
+                                research, foregrounding common good as a practice of the everyday. Ethnographic material from 3 months of field research 
+                                is used to illustrate how the life form of the public sphere around the PC project emerges and is reproduced, with the 
+                                concept of the prototype playing a central role.
+                              </p>
+                                <button data-href="https://rs.cms.hu-berlin.de/urbanopen/?r=32"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text (german)</button>
+                            </td>
+                            <td>
+                              <img class="image_writing" src="https://endboss-hire-chris.hotglue.me/data.head.167827994825" alt="Projekt Commons">
+                            </td>
+                          </tr>
+                        </table>
+                        
+                </div> 
+                </div> 
+          </td>
+        </tr>
+    </table>
+    <div id="installations&ud&video">
+      <div id="installations" class="section_heading">
+                  <pre>
+░▀█▀░█▀█░█▀▀░▀█▀░█▀█░█░░░█░░░█▀█░▀█▀░▀█▀░█▀█░█▀█░█▀▀
+░░█░░█░█░▀▀█░░█░░█▀█░█░░░█░░░█▀█░░█░░░█░░█░█░█░█░▀▀█
+░▀▀▀░▀░▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
+                  </pre>
+              </div>
+        <!-- <div id="f11" style="display: none;"> -->
+        <div id="interspecies" class="entry">
+          <table id="installations">
+            <tr>
+              <td style="border:1px solid rgb(21, 0, 255); padding: 10px;">
+                  <h5>+[Tallinn Pollinator Highway Installation Competition, 2022] Akadeemia Interspecies Crossing</h5>
+              <img class='imagess' src='https://endboss-hire-chris.hotglue.me/data.head.167812146390' border='0' alt='PHOTO-2022-06-09-21-35-31'/></a>
+              <p /*class="non-writing-descriptor"*/>
+                At the very core of the concept of a highway lies its uninterruptedness, its dynamism, and continuous flow of movement through it. 
+                Followingly, the concept of the pollinator highway imagines a pathway for diverse species to transgress urban green environments. 
+                The great appeal of the idea of seamless mobility for multiple species automatically exposes the main challenge for the Putukaväil-Project 
+                in Tallinn: Multiple big crossings interrupt the movement through it for both human and non-human beings that are walking, flying, or 
+                crawling through the city. These roads endanger all living beings through airflow, fumes, and physical collision; the smaller you are, 
+                the harder they are to cross unharmed.  
+                Our project won the "Kohasumin" Installation Competition in Spring 2022 and was realized in summer of the same year. 
+                The Akedeemia Interspecies Crossing provides an experimental means for non-humans to cross the street through an 
+                extension of the floor between and canopy of the trees adjacent to the road. In parallel, it functions as a symbol 
+                and visual landmark representing the movements of non-human urban inhabitants through the city. It emphasizes the 
+                idea of the Pollinator Highway visually as well as conceptually in aiming to experimentally contribute to its 
+                infrastructural and functional coherence.
+                  <br>
+              </p>
+              <button data-href="https://www.putukavail.ee/akadeemia?lang=en"; onclick="window.open(this.getAttribute('data-href')); return false;"> go to project</button>
+              </td>
+              </tr>
+              </table>
+              </div>
+    <div id="pärnu" class="entry">
+        <table>
+            <tr>
+              <td style="border:1px solid rgb(21, 0, 255); padding: 10px;">
+                  <h5> +[Video, 2022] Tides of A Summer City</a></h5>
+                        <table style="border: transparent; width= 853.333px">
+                          <tr>
+                            <td style="border: transparent;">
+                          <img src="https://endboss-hire-chris.hotglue.me/data.head.167369427833"/>
+                            </td>
+                            <td style="border: transparent;">      
+                          <img src="https://endboss-hire-chris.hotglue.me/data.head.167576680130"/>  
+                            </td>
+                            </tr>
+                          </table>                         
+                              <div style="padding: 300px;% 0 0 0;position:relative;">
+                                <iframe 
+                                  src="https://player.vimeo.com/video/789240340?h=01a6fc224c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="tides of a summer city">
+                                </iframe>
+                              </div>
+                              <p /*class="non-writing-descriptor"*/>
+                                What are the possible futures of cities that rely strongly on the seaside, but are at the same time under the constant threat of rising sea levels? Discussing questions of resilience, economy and tourism, our installation comprised of a digitally mapped, three-dimensional video projection. Methodically, we tried to recreate the immersive effect of VR in order to underline the futuristic narrative of the work, which speculated on the possibility of a resilient floating resort city in the far future. Showing how the “Summer City” developed historically, the video installation extrapolates empirical insights through Pärnu’s present day reality into a future of constant flood emergency.
+                              </p> 
+                            <button data-href="https://christianhoerner.xyz/?tides_of_a_summer_city"; onclick="window.open(this.getAttribute('data-href')); return false;"> go to project</button>
+
+                        </td>
+                    </tr>
+                </table>
+              </div>
+              <div id="interfaeces" class="entry">
+        <table>
+            <tr>
+              <td style="border:1px solid rgb(21, 0, 255); padding: 10px;">
+                      <h5>+[Augmented Reality, 2021] Urban Interfa(e)ces </h5></p>
+                      <img class="imagess" src="https://endboss-hire-chris.hotglue.me/data.head.167611581643">
+                      <p>
+                        In the first semester of the Urban Studies masters program at the Estonian Academy of Arts, 
+                        we worked under the theme of Urbanization in the semi-peripheral, pseudo-natural and often 
+                        paradoxical Paljasaare peninsula in the north of Tallinn. During the studio, an interest 
+                        emerged in the unseen dimensions of urbanization: small urban bits, molecules, atoms, emerging 
+                        from the urban terrain and seeping into the seemingly untouched surroundings. The Paljassaare 
+                        wastewater treatment plant became the locus of this interest in “molecular urbanization” and I 
+                        presented my final project, an installation that tried to represent the "glitchedness" of the 
+                        urban process through an augmented reality experience.
+                      </p>
+                      <button data-href="https://paljassaaretimecapsules.cargo.site/Augmented-Interfa-e-ces"; onclick="window.open(this.getAttribute('data-href')); return false;">go to project</button>
+                  </div>
+              </td>
+            </tr>
+        </table>
+        </div>
+    <div id="design">
+              <div class="section_heading">
+                  <pre>
+░█░█░█▀▄░█▀▄░█▀█░█▀█░░░█▀▄░█▀▀░█▀▀░▀█▀░█▀▀░█▀█
+░█░█░█▀▄░█▀▄░█▀█░█░█░░░█░█░█▀▀░▀▀█░░█░░█░█░█░█
+░▀▀▀░▀░▀░▀▀░░▀░▀░▀░▀░░░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀
+                  </pre></a>
+              </div>
+              <!-- <div id='f12'style="display: none;"> --> 
+                <div class="entry" id="keila">
+                    <table>
+                        <tr>
+                            <td style="border:1px solid rgb(93, 252, 1); padding: 10px;">
+                                <h5 style="text-decoration: underline;">+[Urban Design Studio Course, 2022] Masterplan Keila, Estonia: Pohja-Posti</h5>
+                                <img class="imagess" src='https://endboss-hire-chris.hotglue.me/data.head.167378654814' alt='Nightingale555-image-1-1'/>
+                                <p>
+                                    The municipality of Keila struggles with strong dependence on the nearby Tallinn in terms of work and outmigration 
+                                    of young inhabitants to the capital. Although these regional fluctuations contribute to the financial situation of the town, 
+                                    it negatively affects liveability and weakens Keila's urban identity. Emphasizing interdependence in the context of the 
+                                    immediate region, our masterplan aims at creating synergies between municipalities by creating potentials for affordable 
+                                    housing, urban agriculture and education. In the center of the proposition stands the "Keila Vocational School", which is
+                                     imagined to be composed of multiple satellite campuses that are spread across the region. The Sustainable Agriculture Lab in 
+                                     Keila is planned to create educational opportunities in emerging fields such as ecosystem restoration, urban farming and circular economy.
+                                  </p>
+                                  <button data-href="https://christianhoerner.xyz/data.head.168258642521"; onclick="window.open(this.getAttribute('data-href')); return false;">go to project</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="entry" id="tab">
+                    <table>
+                        <tr>
+                            <td style="border:1px solid rgb(93, 252, 1); padding: 10px;">
+                                <h5 style="text-decoration: underline;">+[Tallinn Architecture Biennale Vision Competition, 2022] Neighbourhood Decentralised: A Microrayon Encountering Trust]</h5>
+                                <img class="imagess" src='https://i.postimg.cc/L5s7hX2M/Nightingale555-image-1-1.png' alt='Nightingale555-image-1-1'/>
+                                <p>Residents owning one of the flats in Laagna’s panel buildings are the district's accidental co-owners. Looking to overcome both mistrust and stagnation, 
+                                    new technologies like blockchain offer themselves as a potential methodology for change, circumventing issues of trust through immutability, transparency, 
+                                    and automation. The project speculates about introducing a digital ecosystem that structurally fosters neighbourly reciprocity and provides valuation of 
+                                    community care-work. In this model, architecture is a system that expands private ownership into a network of caring ecologies, in which the public is also 
+                                    necessarily social and distant neighbours turn into attentive friends. Through a collaborative process, structures emerge out of the collectively articulated 
+                                    needs as architecture is provided not only for, but through the community.
+                                </p>
+                                <button data-href="https://christianhoerner.xyz/?neighbourhood_decentralised/"; onclick="window.open(this.getAttribute('data-href')); return false;">go to project</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                  <div id="video" class="section_heading">
+                    <pre *style="margin-left:-50px;"*>
+░█░█░▀█▀░█▀▄░█▀▀░█▀█
+░▀▄▀░░█░░█░█░█▀▀░█░█
+░░▀░░▀▀▀░▀▀░░▀▀▀░▀▀▀</pre></a>
+                  </div>
+                  <table>
+                  <tr>
+                    <td>
+                        <div id="looking" class="entry">
+                        <div id="f16" style="border:1px solid red; padding: 10px;">
+                            <h5>+[Video, 2022] Looking for Action</h5></a> 
+                                <div style="padding:75% 0 0 0;position:relative;">
+                                    <iframe src="https://www.youtube.com/embed/RuNs9VN1Zj0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="looking for action"></iframe>
+                                </div>
+                                <p>
+                                    The project “Looking for Action” tries to present illuminating documentation of the everyday work of a bolt food courier. 
+                                    These urban workers are often invisible, working under a highly neoliberal regime of platform capitalism. Also, they are 
+                                    directly exposed to novel algorithmic means which manage their routes, govern relationships and impact the urban space of 
+                                    food delivery. Our video emerged out of the empirical practice of participant observation and represents a methodical mixture 
+                                    of interview/conversation and active participation in the process of food delivery.
+                                </p>
+                  
+                  </td>
+                </tr>    
+              </tr>
+            </table>
+            <div id="curatorial" class="section_heading">
+              <pre *style="margin-left:-50px;"*>
+  ░█▀▀░█░█░█▀▄░█▀█░▀█▀░█▀█░█▀▄░▀█▀░█▀█░█░░░░░█░█░█▀█░█▀▄░█░█
+  ░█░░░█░█░█▀▄░█▀█░░█░░█░█░█▀▄░░█░░█▀█░█░░░░░█▄█░█░█░█▀▄░█▀▄
+  ░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀░▀░▀░▀</pre></a>
+            </div>
+            <table>
+            <tr>
+              <td>
+                  <div id="sensing" class="entry">
+                  <div id="f16" style="border:1px solid pink; padding: 10px;">
+                      <h5>+[2022] Sensing the City</h5></a> 
+                               <href='https://christianhoerner.xyz/?neighbourhood_decentralised/' target='_blank'><img class="imagess" src='https://endboss-hire-chris.hotglue.me/data.head.167838605688' alt='Nightingale555-image-1-1'/></a>
+                               <p>
+                                 Sensing the City was an exhibition that took place between 15. and 21. of March 2023 in Berlin. As Co-Curator and Organizer, I contributed to the theoretical groundwork for the project, selection of participants, project management and setup in the two locations in Berlin. The exhibition project aimed to create a platform for artistic manifestations that are inspired by urban experiences. Conceptually, it inhabited a space between interdisciplinary urbanism and art: The works on display reflected and explored the urban condition of Berlin and Lisbon from a subjective point of view, illustrating individual encounters with the metropolis. These represent individuals’ senses of the cities and thus highlight the multiplicity of sentiments that arise in areas of dense cohabitation and interdependence. 
+                                </p>
+                                <button data-href="https://sensingthecity.hotglue.me/" onclick="window.open(this.getAttribute('data-href')); return false;">project website</button>
+                              </div>
+            
+  
+              </div>
+              </div>
+            </div>
+          </article>
+    </section>
+</div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</section>
+<footer>
+  <p style="text-align: right;">
+  <a href="https://christianhoerner.xyz/imprint">
+    Imprint
+  </a>
+</p>
+</footer>
+</body>
+</html>
