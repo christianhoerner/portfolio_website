@@ -1,0 +1,947 @@
+<head>
+
+    <script type="text/javascript">
+      var spanText = function spanText(text) {
+      var string = text.innerText;
+      var spaned = '';
+      for (var i = 0; i < string.length; i++) {
+        if(string.substring(i, i + 1) === ' ') spaned += string.substring(i, i + 1);
+        else spaned += '<span>' + string.substring(i, i + 1) + '</span>';
+      }
+      text.innerHTML = spaned;
+    }
+    
+    var headline = document.querySelector("h1");
+    
+    spanText(headline);
+    
+    let animations = document.querySelectorAll('.animation');
+    
+    animations.forEach(animation => {
+      let letters = animation.querySelectorAll('span');
+      letters.forEach((letter, i) => {
+        letter.style.animationDelay = (i * 0.1) + 's';
+      })
+    })
+    
+      function toggle(id){
+        var e = document.getElementById(id);
+         
+        if (e.style.display == "none"){
+           e.style.display = "";
+        } else {
+           e.style.display = "none";
+        }
+      }
+      function show_moti(id) {
+        document.getElementById("moti").style.display = 'block'
+        document.getElementById("portfolio1").style.display = 'none'
+        document.getElementById("portfolio2").style.display = 'none'
+        document.getElementById("cv1").style.display = 'none'
+        document.getElementById("cv2").style.display = 'none'
+      }
+      function show_cv(id) {
+        document.getElementById("cv1").style.display = 'block'
+        document.getElementById("cv2").style.display = 'block'
+        document.getElementById("portfolio1").style.display = 'none'
+        document.getElementById("portfolio2").style.display = 'none'
+        document.getElementById("moti").style.display = 'none'
+    
+    
+    
+      }
+      function show_portfolio(id) {
+        document.getElementById("portfolio1").style.display = 'block'
+        document.getElementById("portfolio2").style.display = 'block'
+        document.getElementById("cv1").style.display = 'none'
+        document.getElementById("cv2").style.display = 'none'
+        document.getElementById("moti").style.display = 'none'
+    
+      }
+    </script>
+    <style>
+        onload {
+            animation: blink;
+            animation-delay: 0;
+        }
+        p {
+          margin: 10px ; font-weight: 100px; font-family:"tobiasregular";
+        }
+        .details{
+            font-size: 14px;
+        }
+        h1{
+          font-size: larger; 
+          font-weight: 100; 
+          /* text-decoration: underline;  */
+          text-underline-offset: 10px;
+          /* text-underline-position: above; */
+          margin-top: 15px; 
+          margin-bottom: 10px;
+          /* writing-mode: vertical-lr; */
+          /* text-orientation: upright; */
+          /* border-right: 1px dotted black; */
+          padding-bottom: 5px;
+          border-bottom: 1px solid black;
+          letter-spacing: 5px;
+          font-family: "denimregular";
+          
+    
+        }
+        h2{
+            font-size: small; 
+          /* font-weight: bold;  */
+          /* text-decoration: underline;  */
+          margin-top: 15px; 
+          margin-bottom: 10px;
+          writing-mode: vertical-lr;
+          /* text-orientation: upright; */
+          /* border-right: 1px dotted black; */
+          /* padding: 5px; */
+          font-family: "denimregular"
+        }
+        h5{
+          margin-bottom: 5px; margin-top: 5px ; font-family:"denimregular"; font-size: large; text-decoration: underline;
+        }
+        
+        div {
+          margin: 5px;
+          /* border: 1px dotted black; */
+          /* width: 50%; */
+        }
+        img{
+          margin: 10px;
+        }
+        .imagess{
+          max-height: 100vh;
+          height: 100%;
+          width: 100%;
+          /* object-fit: fill; */
+        }
+        .image_writing{
+          max-height: 200px;
+        }
+    
+        .image_ud{
+          max-width: 100%;
+        }
+        .section_heading{
+          text-align: left;
+          margin-top: 7%;
+          margin-bottom: 50px;
+          margin-left: -50px;
+          /* margin-right: auto; */
+          padding-top: 50px;
+        }
+        .non-writing-descriptor{
+          background-color: rgba(0, 0, 255, 0.078);
+        }
+        
+        .subtable{
+            border: none;
+            margin: 5px;
+            margin-left: 100px;
+            /* margin-right: auto; */         
+        }
+        .pagediv{
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px black;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            /* margin: 5px; */
+            /* margin-left: -50px; */
+            /* border: 3px solid rgb(0, 255, 0); */
+            max-width: 1200px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .h1{
+            margin-top: 20px;
+            /* border-bottom: 3px dashed rgb(252, 1, 240); */
+            /* margin-left:  -70px; */
+            display: block;
+            font: 700;
+        }
+        .entry_last{
+            font-style: italic;
+        }
+        .position{
+            color: rgb(252, 1, 240);
+        }
+        .institution{
+            text-shadow: 2px;
+            font-weight: 200;
+        }
+        .date{
+            text
+        }
+        .quote{
+            margin-left: 20px;
+            display: block;
+            font-size: 12px
+        }
+        h1 span {
+      display: inline-block;
+      animation: slideLeft 1.5s forwards;
+      opacity: 0;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    
+      table {
+      /* border:2px solid rgb(252, 1, 240); */
+      width: 100%;
+      /* max-width: 1000px; */
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+        }
+        td, th {
+            /* border: 1px dotted rgb(39, 1, 252);  */
+            vertical-align: top;
+            max-width: 1000px;
+            font-family:"tobiasregular";
+        }
+        tr {
+        }
+        button {
+        margin: 7px;
+        color: blueviolet;
+        }
+        .aligncenter{
+        text-align: center;
+      }
+        /* hr{ */
+            width: 100%;
+            color: rgb(255, 0, 255);
+            border-style: dashed;
+            size: 1px;
+        }
+        .cv{
+            border-left: 3px solid rgb(93, 252, 1);
+        }
+        .container_a{
+            display: flex;
+            flex-direction: row;
+        }
+        .container_b{
+            display: flex;
+            flex-direction: column;
+        }
+        nav{
+            position: fixed;
+            width: 100%;
+            margin-left: 50px;
+        }
+        ul li{
+        margin-left: 2em;
+        text-indent: -2em;
+        }
+        .link {
+          text-decoration: underline;
+          color: blue;
+        }
+        .entries {
+          margin-top: 20px;
+          border: 1px solid rgb(252, 1, 240);
+          padding: 10px;
+        }
+        .moti {
+          /* margin-top: 200px; */
+        }
+        .c1 {
+          color:#000000;
+          font-weight:400;
+          text-decoration:none;
+          vertical-align:baseline;
+          font-size:11pt;
+          font-family:"Arial";
+          font-style:normal}
+        .c0 {
+          padding-top:0pt;
+          padding-bottom:0pt;
+          line-height:1.15;
+          orphans:2;
+          widows:2;
+          text-align:left}
+        .c2 {
+          height:11pt
+        }
+        .c3{
+          background-color:#ffffff;
+          max-width:451.4pt;
+          padding:72pt 72pt 72pt 72pt}
+        .cv_grid_row {
+            display: flex;
+            flex-direction: row;
+            /* height:100vh ; */
+            /* border: #000000 1px solid; */
+            /* flex-wrap: wrap; */
+        } 
+        .cv_grid_column_left {
+            display: flex;
+            flex-direction: column;
+            /* border-top: 1px dotted black; */
+            width: 60%;
+            margin-right: 50px;
+        }
+        .cv_grid_column_right {
+            display: flex;
+            flex-direction: column;
+            border: 1px dashed black;
+            width: 40%;
+            background-color: rgba(0, 255, 0, 0.224);
+            margin-top: 30px;
+            height: fit-content;
+        }
+        .category_left {
+            border-top: 1px dotted black;
+            /* display: flex; */
+            /* flex-direction: row; */
+
+        }
+        .category_right {
+            /* border-top: 1px dotted black; */
+            display: flex;
+            flex-direction: row;
+        }   
+        .category_right_b {
+            /* border-top: 1px dotted black; */
+            display: flex;
+            flex-direction: column;
+        }
+        .hyperlink {
+            cursor: help;
+            /* color: blue; */
+            /* text-decoration: underline; */
+            /* color: blue; */
+            text-decoration: underline dotted;
+            text-decoration-color: blue;
+            text-underline-offset: 4px;
+        }
+        .hyperlink_b {
+            cursor: alias;
+            color: blue;
+            /* text-decoration: underline; */
+            /* color: blue; */
+            text-decoration: underline dotted;
+            text-decoration-color: blue;
+            text-underline-offset: 4px;
+            text-align: right;
+        }
+        .hyperlink_c {
+            cursor: alias;
+            /* color: blue; */
+            /* text-decoration: underline; */
+            /* color: blue; */
+            text-decoration: underline dotted;
+            text-decoration-color: blue;
+            text-underline-offset: 4px;
+            text-align: right;
+        }
+        .hyperlink_veröffentlichung {
+            cursor: alias;
+            text-decoration: underline dotted;
+            text-decoration-color: blue;
+            text-underline-offset: 4px;
+            /* text-align: right; */
+            margin-left: 20px;
+            display: block;
+            font-size: 12px
+        }
+        .hyperlink_top {
+            /* cursor: help; */
+            color: blue;
+            /* text-decoration: underline; */
+            /* color: blue; */
+            text-decoration: underline dotted;
+            text-decoration-color: blue;
+            text-underline-offset: 4px;
+        }
+        .hyperlink:hover .position, 
+        .hyperlink:hover {
+            color: rgb(93, 252, 1);
+            text-decoration-color: rgb(93, 252, 1);
+        }
+        .hyperlink_b:hover .position, 
+        .hyperlink_b:hover {
+            color: rgb(93, 252, 1);
+            text-decoration-color: rgb(93, 252, 1)
+        }
+        .hyperlink_c:hover .position, 
+        .hyperlink_c:hover {
+            color: rgb(252, 252, 1);
+            text-decoration-color: rgb(93, 252, 1)
+        }
+        .hyperlink_veröffentlichung:hover .position, 
+        .hyperlink_veröffentlichung:hover {
+            color: rgb(93, 252, 1);
+            text-decoration-color: rgb(93, 252, 1)
+        }
+        .hyperlink_top:hover .position, 
+        .hyperlink_top:hover {
+            color: rgb(252, 1, 240);
+            text-decoration-color: rgb(252, 1, 240);
+        }
+        .blinking-text {
+        animation: blink 1.5s ease-in-out 3;
+      }
+      @keyframes slideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(200px);
+      } 
+      to {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+      }
+      @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @font-face {
+        font-family: 'tobiasregular';
+        src: url('https://endboss-hire-chris.hotglue.me/data.head.167361035856') format('woff2'),
+             url('https://endboss-hire-chris.hotglue.me/data.head.167361035855') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    
+        }
+        @font-face {
+            font-family: 'tobiasbold';
+            src: url('https://endboss-hire-chris.hotglue.me/data.head.167361035392') format('woff2'),
+                url('https://endboss-hire-chris.hotglue.me/data.head.167361035391') format('woff');
+            font-weight: normal;
+            font-style: normal;
+    
+        }
+        @font-face {
+            font-family: 'denimbold';
+            src: url('https://endboss-hire-chris.hotglue.me/data.head.167371999521') format('woff2'),
+                url('https://endboss-hire-chris.hotglue.me/data.head.167371999520') format('woff');
+            font-weight: normal;
+            font-style: normal;
+    
+        }
+        @font-face {
+            font-family: 'denimregular';
+            src: url('https://endboss-hire-chris.hotglue.me/data.head.167371999521') format('woff2'),
+                url('https://endboss-hire-chris.hotglue.me/data.head.167371999520') format('woff');
+            font-weight: normal;
+            font-style: normal;
+    
+        }
+    </style>
+    </head>
+<body>
+    <header>
+        <!-- <div class="pagediv"> -->
+            <div class="container_a" style="padding-top: 5px;">
+                    <p>
+                        Christian Hörner // christian.hoerner@posteo.de
+                    </p>
+                    <p class="hyperlink_top">
+                        <a href="https://endboss-hire-chris.hotglue.me/start" /*onclick="show_moti(id)"*/>Motivation Letter</a>
+                    </p>
+                </td>
+                <td>
+                    <p style="color: rgb(252, 1, 240);">
+                        CV
+                    </p>
+                </td>
+                <td>
+                    <p class="hyperlink_top">
+                        <a href="https://endboss-hire-chris.hotglue.me/portfolio" onclick="show_portfolio(id)">Portfolio</a>
+                    </p>
+                </td>
+            </tr>
+        </div>
+    </header>
+<header>
+    <table>
+        <tr>
+            <td>
+            <p class="title">
+                <pre>
+  ________  ___  ___  ________  ________  ___  ________  ___  ___  ___       ___  ___  _____ ______           ___      ___ ___  _________  ________  _______      
+ |\   ____\|\  \|\  \|\   __  \|\   __  \|\  \|\   ____\|\  \|\  \|\  \     |\  \|\  \|\   _ \  _   \        |\  \    /  /|\  \|\___   ___\\   __  \|\  ___ \     
+ \ \  \___|\ \  \\\  \ \  \|\  \ \  \|\  \ \  \ \  \___|\ \  \\\  \ \  \    \ \  \\\  \ \  \\\__\ \  \       \ \  \  /  / | \  \|___ \  \_\ \  \|\  \ \   __/|    
+  \ \  \    \ \  \\\  \ \   _  _\ \   _  _\ \  \ \  \    \ \  \\\  \ \  \    \ \  \\\  \ \  \\|__| \  \       \ \  \/  / / \ \  \   \ \  \ \ \   __  \ \  \_|/__  
+   \ \  \____\ \  \\\  \ \  \\  \\ \  \\  \\ \  \ \  \____\ \  \\\  \ \  \____\ \  \\\  \ \  \    \ \  \       \ \    / /   \ \  \   \ \  \ \ \  \ \  \ \  \_|\ \ 
+    \ \_______\ \_______\ \__\\ _\\ \__\\ _\\ \__\ \_______\ \_______\ \_______\ \_______\ \__\    \ \__\       \ \__/ /     \ \__\   \ \__\ \ \__\ \__\ \_______\
+     \|_______|\|_______|\|__|\|__|\|__|\|__|\|__|\|_______|\|_______|\|_______|\|_______|\|__|     \|__|        \|__|/       \|__|    \|__|  \|__|\|__|\|_______|
+                </pre>
+            </p>
+            </td>
+        </tr>
+    </table>
+</header>
+<div id="cv2" /*style="display: none;">
+<section /*class="container_a"*/>
+<div class="cv_grid_row">
+    <div class="cv_grid_column_left"> 
+        <div style="padding-top: 10px;" class="category" id="education">
+            <h1>UNI</h1>
+            <table id="education">
+            <tr>
+                <td>
+                    <p /*class="hyperlink">
+                        <a onclick="javascript:toggle('f1')">
+                        &#8594; Universita degli Studio a Padova — <span class="position">Erasmus-Semester: Local Development</span></a>
+                    </p>
+                </td>
+                <td style="/*width: 200px;*/ text-align: right;">
+                    <p>03/2023 — heute</p>
+                </td>
+            </tr>
+            <tr>
+            <td colspan="3" class="quote">
+                <div id="f1" style="display: none;">
+                    <p>
+                        &#8690; iyes yes wvery coll univresity u learned to much lolllllllllllllllhhhhhhhhhhhhhhhhhhhhhhhhhh iruhfjefoijeqoifj
+                                wqifjiewjfiew uehfuewhjifjewifjiewjf oiew jfoijew foi jfe
+                    </p>
+                </div>
+            </td>
+            </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a onclick="javascript:toggle('f2')">
+                                <span class="hyperlink">&#8594; Estonian Academy of Arts — <span class="position"> MSc Urban Studies</span>
+                            </a>
+                        </p>
+                    </td>
+                    <td style="/*width: 200px;*/ text-align: right;">
+                        <p>
+                            09/2021 — heute
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="quote">
+                        <div id="f2" style="display: none;">
+                            <ul>
+                                <li>&#x2022; Entwicklung einer kontextorientierten Forschungs- und Recherchepraxis</li>
+                                <li>&#x2022; Erprobung verschiedener Projektformen vom klassischen Text, Kunst im öffentlichen Raum und neuen Medien</li>
+                                <li>&#x2022; Erarbeitung einer breiten Theoriebasis  und Kenntnis aktueller und klassischer Diskurse der Stadtforschung</li>
+                                <li>&#x2022; Artikulierung einer interdisziplinären Sprache zwischen verschiedenen Disziplinen der urbanen Praxis</li>
+                            </ul>
+                            
+                            <!-- <button data-href="https://www.artun.ee/en/curricula/urban-studies/" onclick="window.open(this.getAttribute('data-href')); return false;"> -->
+                                <p class="hyperlink_b" data-href="https://www.artun.ee/en/curricula/urban-studies/" onclick="window.open(this.getAttribute('data-href')); return false;">                
+                                    &#8594; mehr dazu
+                                </p>
+                            <!-- </button> -->
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <p>
+                            &#8594;<span class="institution"> Humboldt Universität zu Berlin </span> — <span class="position"> MSc Urbane Geographie</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="/*width: 200px;*/ text-align: right;">
+                            10/2020 — 08/2021
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            &#8594;<span class="institution"> Panteion University Athens</span> — <span class="position"> Erasmus-Semester: Social Anthropology</span>
+                        </p>
+                        <td style="/*width: 200px;*/ text-align: right;">
+                            <p>
+                                02/2019 — 06/2019
+                            </p>
+                        </td>
+                    </tr>
+                </td>
+                <tr>
+                    <td>
+                        <p>
+                            <a href="javascript:toggle('f6')">
+                            <span class="hyperlink">&#8594;<span class="institution"> Humboldt Universität zu Berlin</span> — <span class="position"> BA Europäische Ethnologie</span></span>
+                            </a>
+                        </p>
+                    </td>
+                    <td style="min-width: max-content; text-align: right;">
+                        <p>
+                            10/2016 — 09/2020
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="quote">
+                        <div id="f6" style="display: none;">
+                            <ul>
+                                <li>&#x2022; Bachelorarbeit "Gemeinwohl als Lebensform in Beta: Eine Ethnografie prototypischer Infrastrukturen der gemeinwohlorientierten Stadtentwicklung", bewertet mit 1,0</li>
+                            </ul>
+                            
+                            <!-- <button data-href="https://www.artun.ee/en/curricula/urban-studies/" onclick="window.open(this.getAttribute('data-href')); return false;"> -->
+                                <p class="hyperlink_b" data-href="https://rs.cms.hu-berlin.de/urbanopen/pages/view.php?ref=32&k=" onclick="window.open(this.getAttribute('data-href')); return false;">                
+                                    &#8594; Thesis lesen
+                                </p>
+                            <!-- </button> -->
+                        </div>
+                    </td>
+                    </tr>
+                </table>
+        </div>
+        <div class="category" style="align-items: center;" >
+            <h1 id="lehre">
+                LEHRE
+            </h1>
+            <table id="teaching" style="height: fit-content;">
+                        </td>
+                      </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <a onclick="javascript:toggle('f3')">
+                                <span class="hyperlink">&#8594; Humboldt Universität zu Berlin — <span class="position"> Projekttutorium Reorganize Berlin</span> — <span class="entry_last">Tutor </span>
+                                </a>
+                            </p>
+                        </td>
+                        <td style="min-width: max-content; text-align: right;">
+                            <p>
+                                Sommersemester 2021
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td span="3" class="quote">
+                    <div id="f3" style="display: none;">
+                        <ul> 
+                            <li>&#x2022; Entwicklung eines Konzepts für eine zweisemestrige, von Studierenden geleiteten Lehrveranstaltung zum Thema Selbstorganisation im städtischen Kontext</li>
+                            <li>&#x2022; Einsemestrige Lehrtätigkeit im Rahmen des Kurses</li>
+                        </ul>
+                        <!-- <button data-href="https://endboss-hire-chris.hotglue.me/data.head.168130732794" onclick="window.open(this.getAttribute('data-href')); return false;"> -->
+                            <p class="hyperlink_b" data-href="https://endboss-hire-chris.hotglue.me/data.head.168130732794" onclick="window.open(this.getAttribute('data-href')); return false;">&#8594; Zine lesen
+                        <!-- </button> -->
+                        </p>
+                    </td>
+                    </tr>
+                </table>
+        </div>
+        <div class="category">
+            <h1>NETZWERK</h1>                           
+            <table id="network">
+                <tr>
+                    <td>
+                          <p>
+                                <a onclick="javascript:toggle('f4')">
+                                    <span class="hyperlink">&#8594; Studentisches Projekt — <span class="position"> LDPU (Lab for Digital Participatory Urbanity) </span> — <span class="entry_last"> Mitgründer</span>
+                                </a>
+                          </p>
+                      </td>
+                      <td style="/*width: 200px;*/ text-align: right;">
+                          <p>
+                              seit Herbst 2020
+                          </p>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td span="3" class="quote">
+                <div id="f4" style="display: none;">
+                    <ul>
+                        <li>&#x2022; LDPU ist eine Platform die mit verschiedene Arten von Wissenproduktion und Kommunikation experimentiert und sich 
+                        dabei hauptsächlich auf Problemstellungen von digitaler Demokratie und Stadt fokussiert</li>
+                    </ul>
+                    <!-- <button data-href="https://www.instagram.com/ldpu_berlin/" onclick="window.open(this.getAttribute('data-href')); return false;"> -->
+                        <p class="hyperlink_b" data-href="https://www.instagram.com/ldpu_berlin/" onclick="window.open(this.getAttribute('data-href')); return false;">
+                            &#8594; Instagram
+                        </p>
+                    <!-- </button> -->
+                </td>
+                </tr>
+                  <tr>
+                    <td>
+                        <p>
+                            <a onclick="javascript:toggle('f5')">
+                                <span class="hyperlink"> &#8594; <span class="institution">Forum Stadtmachen —<span class="position"> Urbane Liga</span> —<span class="entry_last"> Teilnehmer</span></span>
+                            </a>
+                        </p>
+
+                    
+                    </td>
+                    <td style="min-width: max-content; text-align: right;">
+                        <p>
+                            Herbst 2020 — Sommer 2022
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td span="3" class="quote">
+                        <div id="f5" style="display: none;">
+                    <ul> 
+                        <li>&#x2022; Teilnahme am vom Bund geförderten Forum für junge Stadtmacher*innen</li> 
+                        <li>&#x2022; Forschung und Entwicklung neuer Konzepte für eine partizipative städtische Praxis</li>
+                        <li>&#x2022; Präsentation der Ergebnisse vor Verantwortlichen aus der Politik </li>
+                    </ul>
+                    <!-- <button data-href="" onclick="window.open(this.getAttribute('data-href')); return false;"> -->
+                        <p class="hyperlink_b" data-href="https://urbane-liga.de/akteure/jahrgang-20-21/lab-for-digital-participatory-urbanity-berlin/" onclick="window.open(this.getAttribute('data-href')); return false;">&#8594; mehr dazu
+                        </p>
+                    <!-- </button> -->
+                </div>
+                </td>
+                </tr>
+                </table>
+        </div>
+        <div class="category">
+            <h1>AUSZEICHNUNGEN</h1>
+            <table id="awards">
+                <tr>
+                    <td>
+                            <p data-href="https://www.putukavail.ee/akadeemia?lang=en" onclick="window.open(this.getAttribute('data-href')); return false;">
+                                <span class="hyperlink_c">&#8594; <span>Publikumspreis</span> — <span class="position">Tallinn Pollinator Highway Installationswettbewerb “Place Buzz”</span></span>
+                            </p>
+                        </td>
+                        <td style="/*width: 200px;*/ text-align: right;">
+                            <p>
+                                Mai 2022
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p data-href="https://www.gsz.hu-berlin.de/de/auszeichnungen#georg" onclick="window.open(this.getAttribute('data-href')); return false;" >
+                                <span class="hyperlink_c">&#8594; <span class="institution">Nominierung</span> — <span class="position">Georg-Simmel-Preis für Abschlussarbeiten</span></span>
+                            </p>
+                        </td>
+                        <td style="/*width: 200px;*/ text-align: right;">
+                            <p>
+                                Herbst 2021
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+    <div class="cv_grid_column_right" style="font-size: smaller;">
+        <div class="category_right">
+                    <h2>
+                        KONFERENZEN
+                        <!-- <pre> -->
+    <!-- ░█▀▀░█▀█░█▀█░█▀▀░█▀▀░█▀▄░█▀▀░█▀█░█▀▀░█▀▀░█▀▀ -->
+    <!-- ░█░░░█░█░█░█░█▀▀░█▀▀░█▀▄░█▀▀░█░█░█░░░█▀▀░▀▀█ -->
+    <!-- ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀ -->
+                        <!-- </pre> -->
+                        </h2>
+        <table id="conferences" style="font-size: small;">
+            <tr>
+                <td>
+                    <p style="margin-left: 24px;">
+                        <span style="margin-left: -14px;">&#8594;</span> <span class="institution">14. Kongress der Nationalen Stadtentwicklungspolitk</span> — <span class="position">Panelist</span> <br> — <span class="entry_last">Stadt und Digitaler Raum</span>
+                    </p>
+                </td>
+                <td>
+                    <p style="text-align: right">
+                        05/2021
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="margin-left: 24px;">
+                        <span style="margin-left: -14px;" class="institution">&#8594; Georg Simmel Symposium 2021</span> — <span class="position">Speaker</span><br> — <span class="entry_last"> Präsentation Bachelorarbeit</span>
+                    </p>
+                </td>
+                <td>
+                    <p style="text-align: right">
+                        11/2021
+                    </p>
+                </td>
+            </tr>
+                </table>
+            </div>
+        <div id="publications" class="category_right" style="border-top: 1px dotted black;">
+            <h2>
+                            VERÖFFENTLICHUNGEN
+                            <!-- <pre> -->
+        <!-- ░█▀█░█░█░█▀▄░█░░░▀█▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█▀█░█▀▀ -->
+        <!-- ░█▀▀░█░█░█▀▄░█░░░░█░░█░░░█▀█░░█░░░█░░█░█░█░█░▀▀█ -->
+        <!-- ░▀░░░▀▀▀░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀ -->
+                            <!-- </pre> -->
+                        </h2>
+                    </td>
+                </tr>
+                <table id="publications" style="font-size: small;"> 
+                <tr>
+                    <td>
+                        <p>
+                            <a data-href="https://endboss-hire-chris.hotglue.me/portfolio/#protocol"; onclick="window.open(this.getAttribute('data-href')); return false;">
+                            <span class="hyperlink_veröffentlichung"><span style="margin-left: -20px;">&#8594;</span> Hörner, C., Paula Veidenbauma (2023). ‘Of Neighbours and Friends: The Possibilities of Blockchain-Aided Community Development in Tallinn`s Laagna District.’ Protocol: Magazin für Architektur im Kontext</span>
+                            </a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a data-href="https://endboss-hire-chris.hotglue.me/portfolio/#sirp"; onclick="window.open(this.getAttribute('data-href')); return false;">
+                            <span class="hyperlink_veröffentlichung"><span style="margin-left: -20px ;">&#8594;</span>Hörner, C., (2022) ‘Food Cities: Or, The Common Knowledge of Metabolism‘ Sirp</span></a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a data-href="https://rs.cms.hu-berlin.de/urbanopen/pages/view.php?ref=32&k="; onclick="window.open(this.getAttribute('data-href')); return false;">
+                            <span class="hyperlink_veröffentlichung"><span style="margin-left: -20px ;">&#8594;</span>Hörner, C., (2021). ‘Gemeinwohl als Lebensform in Beta: Eine Ethnographie gemeinwohlorientierter Infrastrukturen der Stadtentwicklung / Common Good as a Form of Life in Beta: An Ethnography of
+                                Prototypical Infrastructures of Urban Development.’ UrbanOpen</span></a>
+                        </p>
+                    </td>
+                </tr>
+                </table>
+        </div>  
+        <div class="category_right_b" style="border-top: 1px dotted black;">
+            <h2 style="font-family: denimregular; font-size: small; writing-mode: horizontal-tb; margin-left: 4px;">
+                ENGAGEMENT:
+            </h2>
+            <table>
+                <tr>
+                    <td>
+                        <p style="font-size: small; margin-left: 20px;">
+                            &#8594;<span class="institution">Deutsche Wohnen und Co Enteignen</span> — <span class="position">Unterschriftensammlung</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-size: small; text-align: right;">
+                            Frühling 2021
+                        </p>
+                    </td>
+                </tr>
+            </table>
+</div>      
+        <div class="category_right">
+                    <div style="display: grid; width: 100%; border-top: 1px solid black;">
+                        <p style="border-bottom: 1px dashed black;">
+                            <span class="h2" style="margin-left: -3px;">COMPUTERKENNTNISSE</span>
+                        </p>
+                        <p style="border-bottom: 1px dashed black; grid-column: 2;"> 
+                            <span class="institution">SPRACHEN</span>
+                        </p>
+                        <table style="width: 100%; font-size: small; /*border-left: 1px dashed black;*/ padding: 5px; margin-left: 12px; ">
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> Bildbearbeitung</td>
+                                <td /*style="text-align: right;">[Adobe Photoshop, Lightroom]</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span>Videobearbeitung
+                                </td>
+                                <td /*style="text-align: right;">[Adobe Premiere Pro]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span>Graphic Design <br> & Layout
+                                </td>
+                                <td /*style="text-align: right;">[Adobe Indesign, Illustrator]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> GIS
+                                </td>
+                                <td /*style="text-align: right;">
+                                    [QGIS]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> Statistik
+                                </td>
+                                <td /*style="text-align: right;">[R]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> 3D Modelling
+                                </td>
+                                <td /*style="text-align: right;">
+                                    [Blender, Rhinoceros]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> Webdesign
+                                </td>
+                                <td /*style="text-align: right;">
+                                    [HTML, CSS, Basic Javascript]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> Content <br> Management
+                                </td>
+                                <td /*style="text-align: right;">
+                                    [Wordpress]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="margin-left: -12px;">&#8605;</span> Mixed Reality
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="font-size: small; border-left: 1px dashed black; ">
+                            <tr>
+                                <td style="display:block; margin-left: 10px;">
+                                &#8605;Englisch
+                                </td>
+                                <td style="/*text-align: right;">
+                                    [fluent, Cambridge C2]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display:block; margin-left: 10px;">
+                                    &#8605;Französisch
+                                </td>
+                                <td style="/*text-align: right;">
+                                    [fluent]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display:block; margin-left: 10px;">
+                                    &#8605;Italienisch
+                                </td>
+                                <td style="/*text-align: right;">
+                                    [basic]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display:block; margin-left: 10px;">
+                                    &#8605;Russisch
+                                </td>
+                                <td style="/*text-align: right;">
+                                    [basic]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display:block; margin-left: 10px;">
+                                    &#8605;Griechisch
+                                </td>
+                                <td style="/*text-align: right;">
+                                    [basic]
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+        </div>
+        </div>
+    </div>
+</section>
+</div>
+</body>
