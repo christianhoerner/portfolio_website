@@ -60,6 +60,12 @@ animations.forEach(animation => {
     document.getElementById("moti").style.display = 'none'
 
   }
+
+  function hover_underline() {
+    var link = document.querySelector('.link');
+    link.style.textDecoration = 'underline';
+  }
+  
 </script>
 <style>
     p {
@@ -85,6 +91,10 @@ animations.forEach(animation => {
     }
     h5{
       margin-bottom: 5px; margin-top: 5px ; font-family:"denimregular"; font-size: large;
+    }
+     h5[onclick]:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
     
     div {
@@ -380,10 +390,10 @@ animations.forEach(animation => {
   <!-- <div id="f10" style="display: none;"> -->
     <div id="dorc" class="entry">
       <div class="entries">
-          <h5 onclick="toggle('text1')" style="text-decoration: underline;">+[Masters Thesis, 2024] Waste and Data - Researching the Governmentality of Smart Waste Prototypes</h5> 
+          <h5 onclick="toggle('text1')">+[Masters Thesis, 2024] Waste and Data - Researching the Governmentality of Smart Waste Prototypes</h5> 
             <div id="text1" style="display: none;">
               <p>The “Smart City” is a trend in contemporary urbanism that represents new computational rationalities of governing and managing infrastructures. These logics inform experimental processes of embedding digital devices into existing systems and urban lifeworlds. In Hanover, Germany, a joint-venture of public and private firms is currently prototyping a “Smart Waste” system that utilizes sensing and communication technology in order to optimize the city’s waste management. Applying recent theoretical literature on environmental governmentality to the case of Hanover, the thesis seeks to empirically expand critical studies of the Smart City. Highlighting how smart governmentality is enacted by the project, the case material suggests that waste is rearticulated from unwanted material to valuable data resource. Following a methodology that thinks infrastructures as complex systems of human and non-human actors, a mixed-method approach was utilized that employed discursive document analysis, historical research, interviews, and qualitative analysis. This research highlights power dynamics between populations and infrastructures in smart cities and underscores the transformation of urban epistemologies through smart city prototypes. The work offers a perspective that, rather than placing the human in the center of attention, asks questions about how digital technologies change our understandings of urban materials and how this shift affects urban lifeworlds.</p>
-            <button data-href="https://christianhoerner.xyz/data.head.171801166520"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
+            <button data-href="https://drive.proton.me/urls/3M7AVXJMFR#j1EwriedLZHa"; onclick="window.open(this.getAttribute('data-href')); return false;"> full text </button>
             </div>
     </div>
                   <div id="dorc" class="entry">
